@@ -1,38 +1,65 @@
 .App {
+  text-align: left;
+  font-family: 'Segoe UI';
+}
+
+.header {
+  font-size: 25px;
+  background-color: #000;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  margin-bottom: 15px;
+}
+
+.header h2 {
+  color: #fff;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#zip_Info {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#zip_Info h3 {
+  margin-left: 40px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#info_Body {
+  border: 1px solid black;
+  margin-left: 30px;
+  margin-right: 30px;
+  border-radius: 30px;
+  
+  background-color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+.info_Body, ul.no-bullets{
+  list-style-type: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#searchBar {
+  margin-bottom: 10px;
+}
+
+#searchBar label {
+  margin-left: 40px;
+  font-weight: bold;
+  color: #fff;
+}
+
+#display {
+  margin-left: 10px;
+  margin-right: 10px;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 1px solid #000;
+  border-radius: 30px;
+  background-color: #000;
+}
+
+#null {
+  margin-left: 40px;
+  color: #fff;
 }
