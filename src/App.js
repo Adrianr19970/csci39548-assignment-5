@@ -17,30 +17,6 @@ function City(props) {
   );
 }
 
-/*
-function City(props) {
-  return (
-    <div className="row">
-      <div className="col-xs-12">
-        <div className="panel panel-default">
-          <div className="panel-heading">
-            <h3 className="panel-title">{props.data.LocationText}</h3>
-          </div>
-          <div className="panel-body">
-            <ul>
-              <li>State: {props.data.State}</li>
-              <li>Location: ({props.data.Lat}, {props.data.Long})</li>
-              <li>Population (estimated): {props.data.EstimatedPopulation}</li>
-              <li>Total Wages: {props.data.TotalWages}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-*/
-
 function ZipCodeSearch(props) {
   return (
     <div id="searchBar">
@@ -94,13 +70,6 @@ class App extends Component {
         });
       })
 
-      /*
-      .catch((e) =>{
-        this.setState({
-          cities: [],
-        });
-      });
-      */
     } else {
       this.setState({
         cities: [],
