@@ -5,13 +5,14 @@ function City(props) {
   return (
     <div id="zip_Info">
         <div id="info_Body">
-        <h3 className="title">{props.data.LocationText}</h3>
-        <ul class="no-bullets">
+        <h3 id="Location">{props.data.LocationText} </h3>
+          <ul class="no-bullets">
+            <li>Country: {props.data.Country}</li>
             <li>State: {props.data.State}</li>
             <li>Location: ({props.data.Lat}, {props.data.Long})</li>
             <li>Population (Estimated): {props.data.EstimatedPopulation}</li>
-            <li>Total Wages: {props.data.TotalWages}</li>
-        </ul>
+            <li>Tax Returns Filled: {props.data.TaxReturnsFiled}</li>
+          </ul>
       </div>
     </div>
   );
@@ -20,12 +21,12 @@ function City(props) {
 function ZipCodeSearch(props) {
   return (
     <div id="searchBar">
-      <label htmlFor="zip">Zip Code: </label>
+      <label> Zip Code: </label>
       <input
-        type="text"
-        id="zipcode"
-        value={props.zipValue}
-        onChange={props.handleChange}
+        type = "text"
+        id = "zipcode"
+        value = {props.zipValue}
+        onChange = {props.handleChange}
       />
     </div>
   );
@@ -44,24 +45,26 @@ class App extends Component {
   }
 
   zipCodeChange(event) {
-    const zip = event.target.value;
+    let zip = event.target.value;
 
-    this.setState({
+    this.setState ({
       zipCodeValue: zip,
     })
 
     if(zip.length === 5) {
-      fetch('http://ctp-zip-api.herokuapp.com/zip/'+zip)
+      fetch('http://ctp-zip-api.herokuapp.com/zip/' + zip)
         .then((response) => {
           if(response.ok) {
             return response.json();
-          } else {
+          } 
+          
+          else {
             return[];
           }
       })
 
       .then((jsonResponse) => {
-        const cities = jsonResponse.map((city) => {
+        let cities = jsonResponse.map((city) => {
           return <City data={city} key={city.RecordNumber} />;
         });
 
@@ -69,11 +72,12 @@ class App extends Component {
           cities: cities,
         });
       })
-
-    } else {
-      this.setState({
-        cities: [],
-      });
+    } 
+    
+    else {
+    this.setState ({
+      cities: [],
+    });
     
     }
   }
@@ -87,13 +91,17 @@ class App extends Component {
         <div id="display">
           <div id="display_Info">
             <ZipCodeSearch
-              zipValue={this.state.zipValue}
-              handleChange={this.zipCodeChange} 
+              zipValue = {this.state.zipValue}
+              handleChange = {this.zipCodeChange} 
             />
             {this.state.cities.length > 0 ? this.state.cities :
             <div id="null"> No Results
             </div>}
           </div>
+        </div>
+
+        <div className="header">
+          <h2>City Search</h2>
         </div>
       </div>
     );

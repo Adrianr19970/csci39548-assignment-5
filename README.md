@@ -1,3 +1,5 @@
+Link to deployed page: https://adrianr19970.github.io/csci39548-assignment-5/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
