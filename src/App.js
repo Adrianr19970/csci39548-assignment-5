@@ -71,7 +71,7 @@ class App extends Component {
     })
 
     if(zip.length === 5) {
-      fetch('http://ctp-zip-api.herokuapp.com/zip/' + zip)
+      fetch('https://ctp-zip-api.herokuapp.com/zip/' + zip)
         .then((response) => {
           if(response.ok) {
             return response.json();
@@ -108,7 +108,7 @@ class App extends Component {
       cityValue: city,
     });
 
-      fetch('http://ctp-zip-api.herokuapp.com/city/' + city)
+      fetch('https://ctp-zip-api.herokuapp.com/city/' + city)
         .then((response) => {
           if(response.ok) {
             return response.json();
