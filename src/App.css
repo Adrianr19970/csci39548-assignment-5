@@ -33,6 +33,14 @@
   
   background-color: #fff;
 }
+#zipinfo_Body{
+	border: 1px solid black;
+	margin-left: 30px;
+	margin-right: 30px;
+	border-radius: 30px;
+	background-color: #fff;
+	width:7%
+}
 
 .info_Body, ul.no-bullets{
   list-style-type: none;
@@ -40,6 +48,7 @@
 
 #searchBar {
   margin-bottom: 10px;
+  display: inline-block;
 }
 
 #searchBar label {
@@ -65,3 +74,12 @@
   margin-left: 40px;
   color: #fff;
 }
+
+#submit_button{
+	border: 1px solid #fff;
+	border-radius: 5px;
+	background-color: #000;
+	color: #fff;
+	padding:4px;
+}
+
