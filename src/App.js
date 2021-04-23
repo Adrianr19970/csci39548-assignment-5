@@ -110,7 +110,7 @@ class App extends Component {
 
       fetch('https://ctp-zip-api.herokuapp.com/city/' + city)
         .then((response) => {
-          if(response.ok) {
+          if(response.ok) { 
             return response.json();
           } 
           
